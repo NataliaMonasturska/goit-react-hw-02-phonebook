@@ -8,17 +8,12 @@ export class ContactForm extends Component {
     number: '',
   };
 
-  handleChangeInputName = event => {
+  handleChangeInput = event => {
     this.setState({
-      name: event.target.value,
+     [event.target.name]: event.target.value,
     });
   };
 
-  handleChangeInputTel = event => {
-    this.setState({
-      number: event.target.value,
-    });
-  };
 
   reset = () => {
     this.setState({
@@ -47,9 +42,10 @@ export class ContactForm extends Component {
       <div className={css.cartInputForm}>
         <form className={css.form} onSubmit={this.handleSubmitInputName}>
           <label className={css.label}>
-            <span>Name</span>
+            <span className={css.inputName}>Name</span>
             <input
-              onChange={this.handleChangeInputName}
+            className={css.input}
+              onChange={this.handleChangeInput}
               value={this.state.name}
               type="text"
               name="name"
@@ -60,9 +56,10 @@ export class ContactForm extends Component {
           </label>
 
           <label className={css.label}>
-            <span>Number</span>
+            <span className={css.inputName}>Number</span>
             <input
-              onChange={this.handleChangeInputTel}
+            className={css.input}
+              onChange={this.handleChangeInput}
               value={this.state.number}
               type="tel"
               name="number"
@@ -72,7 +69,7 @@ export class ContactForm extends Component {
             />
           </label>
 
-          <button type="submit">add contact</button>
+          <button type="submit" className={css.btn}>add contact</button>
         </form>
       </div>
     );
