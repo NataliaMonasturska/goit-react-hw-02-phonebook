@@ -8,7 +8,11 @@ export const Contact = ({ contact, onDeleteClick }) => {
       <span className={css.contactName}>{contact.name}: </span>
       <div>
         <span className={css.contactNumber}>{contact.number}</span>
-        <button onClick={() => onDeleteClick(contact.id)} className={css.btn}>
+        <button
+          type="button"
+          onClick={() => onDeleteClick(contact.id)}
+          className={css.btn}
+        >
           Delete
         </button>
       </div>
