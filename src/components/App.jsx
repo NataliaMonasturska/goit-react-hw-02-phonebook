@@ -31,8 +31,9 @@ export class App extends Component {
   };
 
   recordsСontactsInState = (name, number) => {
+   const nameNormalized = name.toLowerCase();
     const dobbleName = this.state.contacts.find(
-      contact => contact.name === name
+      contact => contact.name.toLowerCase() === nameNormalized
     );
     dobbleName
       ? window.alert(`${name} is already in contacts`)
